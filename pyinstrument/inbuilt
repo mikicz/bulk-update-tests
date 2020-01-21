@@ -1,0 +1,139 @@
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:31:28  Samples:  127449
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 167.780   CPU time: 154.497
+/   _/                      v3.1.0
+
+Program: manage.py run_test inbuilt
+
+167.779 <module>  manage.py:2
+└─ 167.779 main  manage.py:7
+   └─ 167.762 execute_from_command_line  django/core/management/__init__.py:378
+      └─ 167.762 execute  django/core/management/__init__.py:301
+         └─ 167.619 run_from_argv  django/core/management/base.py:306
+            └─ 167.618 execute  django/core/management/base.py:342
+               └─ 167.590 handle  apps/something/management/commands/sample.py:10
+                  └─ 167.568 inbuilt  apps/something/test_bulk_update.py:6
+                     └─ 166.667 manager_method  django/db/models/manager.py:81
+                        └─ 166.238 bulk_update  django/db/models/query.py:484
+                           ├─ 146.358 update  django/db/models/query.py:728
+                           │  ├─ 75.159 execute_sql  django/db/models/sql/compiler.py:1455
+                           │  │  └─ 75.156 execute_sql  django/db/models/sql/compiler.py:1105
+                           │  │     ├─ 60.664 as_sql  django/db/models/sql/compiler.py:1398
+                           │  │     │  ├─ 31.466 compile  django/db/models/sql/compiler.py:400
+                           │  │     │  │  └─ 31.320 as_postgresql  django/db/models/functions/comparison.py:36
+                           │  │     │  │     └─ 31.314 as_sql  django/db/models/functions/comparison.py:13
+                           │  │     │  │        └─ 31.278 as_sql  django/db/models/expressions.py:606
+                           │  │     │  │           └─ 31.251 compile  django/db/models/sql/compiler.py:400
+                           │  │     │  │              └─ 31.238 as_sql  django/db/models/expressions.py:966
+                           │  │     │  │                 └─ 30.649 compile  django/db/models/sql/compiler.py:400
+                           │  │     │  │                    └─ 29.690 as_sql  django/db/models/expressions.py:897
+                           │  │     │  │                       ├─ 27.929 compile  django/db/models/sql/compiler.py:400
+                           │  │     │  │                       │  ├─ 22.158 as_sql  django/db/models/sql/where.py:65
+                           │  │     │  │                       │  │  ├─ 20.193 compile  django/db/models/sql/compiler.py:400
+                           │  │     │  │                       │  │  │  └─ 19.302 as_sql  django/db/models/lookups.py:161
+                           │  │     │  │                       │  │  │     ├─ 14.431 process_lhs  django/db/models/lookups.py:152
+                           │  │     │  │                       │  │  │     │  ├─ 9.701 process_lhs  django/db/models/lookups.py:76
+                           │  │     │  │                       │  │  │     │  │  ├─ 6.925 resolve_expression  django/db/models/expressions.py:223
+                           │  │     │  │                       │  │  │     │  │  │  └─ 5.843 copy  django/db/models/expressions.py:331
+                           │  │     │  │                       │  │  │     │  │  │     └─ 5.503 copy  copy.py:66
+                           │  │     │  │                       │  │  │     │  │  │        ├─ 2.634 [self]  
+                           │  │     │  │                       │  │  │     │  │  │        └─ 2.316 _reconstruct  copy.py:268
+                           │  │     │  │                       │  │  │     │  │  └─ 1.889 compile  django/db/models/sql/compiler.py:400
+                           │  │     │  │                       │  │  │     │  ├─ 2.375 db_type  django/db/models/fields/__init__.py:649
+                           │  │     │  │                       │  │  │     │  │  └─ 1.806 db_type_parameters  django/db/models/fields/__init__.py:634
+                           │  │     │  │                       │  │  │     │  └─ 1.890 [self]  
+                           │  │     │  │                       │  │  │     └─ 3.621 process_rhs  django/db/models/lookups.py:248
+                           │  │     │  │                       │  │  └─ 1.966 [self]  
+                           │  │     │  │                       │  ├─ 4.080 as_sql  django/db/models/expressions.py:651
+                           │  │     │  │                       │  │  └─ 1.771 get_db_prep_save  django/db/models/fields/__init__.py:791
+                           │  │     │  │                       │  └─ 1.691 [self]  
+                           │  │     │  │                       └─ 1.713 [self]  
+                           │  │     │  ├─ 17.007 resolve_expression  django/db/models/expressions.py:599
+                           │  │     │  │  └─ 16.990 resolve_expression  django/db/models/expressions.py:953
+                           │  │     │  │     └─ 16.649 resolve_expression  django/db/models/expressions.py:889
+                           │  │     │  │        ├─ 9.280 resolve_expression  django/db/models/expressions.py:669
+                           │  │     │  │        │  ├─ 5.963 resolve_expression  django/db/models/expressions.py:223
+                           │  │     │  │        │  │  └─ 4.872 copy  django/db/models/expressions.py:331
+                           │  │     │  │        │  │     └─ 4.623 copy  copy.py:66
+                           │  │     │  │        │  │        ├─ 2.276 [self]  
+                           │  │     │  │        │  │        └─ 1.804 _reconstruct  copy.py:268
+                           │  │     │  │        │  └─ 3.316 [self]  
+                           │  │     │  │        ├─ 4.499 copy  django/db/models/expressions.py:331
+                           │  │     │  │        │  └─ 4.280 copy  copy.py:66
+                           │  │     │  │        │     └─ 2.231 [self]  
+                           │  │     │  │        └─ 1.895 resolve_expression  django/db/models/sql/where.py:186
+                           │  │     │  └─ 11.346 __get__  django/utils/functional.py:72
+                           │  │     │     ├─ 5.689 contains_over_clause  django/db/models/expressions.py:215
+                           │  │     │     │  └─ 5.688 <genexpr>  django/db/models/expressions.py:217
+                           │  │     │     │     └─ 5.687 __get__  django/utils/functional.py:72
+                           │  │     │     │        └─ 5.685 contains_over_clause  django/db/models/expressions.py:215
+                           │  │     │     │           └─ 5.628 <genexpr>  django/db/models/expressions.py:217
+                           │  │     │     │              └─ 5.366 __get__  django/utils/functional.py:72
+                           │  │     │     │                 └─ 4.946 contains_over_clause  django/db/models/expressions.py:215
+                           │  │     │     │                    └─ 4.227 <genexpr>  django/db/models/expressions.py:217
+                           │  │     │     │                       └─ 3.333 __get__  django/utils/functional.py:72
+                           │  │     │     │                          └─ 2.171 contains_over_clause  django/db/models/sql/where.py:178
+                           │  │     │     │                             └─ 1.948 _contains_over_clause  django/db/models/sql/where.py:172
+                           │  │     │     └─ 5.657 contains_aggregate  django/db/models/expressions.py:211
+                           │  │     │        └─ 5.654 <genexpr>  django/db/models/expressions.py:213
+                           │  │     │           └─ 5.651 __get__  django/utils/functional.py:72
+                           │  │     │              └─ 5.650 contains_aggregate  django/db/models/expressions.py:211
+                           │  │     │                 └─ 5.600 <genexpr>  django/db/models/expressions.py:213
+                           │  │     │                    └─ 5.339 __get__  django/utils/functional.py:72
+                           │  │     │                       └─ 5.076 contains_aggregate  django/db/models/expressions.py:211
+                           │  │     │                          └─ 4.418 <genexpr>  django/db/models/expressions.py:213
+                           │  │     │                             └─ 3.530 __get__  django/utils/functional.py:72
+                           │  │     │                                └─ 2.218 contains_aggregate  django/db/models/sql/where.py:168
+                           │  │     │                                   └─ 1.995 _contains_aggregate  django/db/models/sql/where.py:162
+                           │  │     └─ 14.419 execute  django/db/backends/utils.py:96
+                           │  │        └─ 14.413 execute  django/db/backends/utils.py:66
+                           │  │           └─ 14.413 _execute_with_wrappers  django/db/backends/utils.py:72
+                           │  │              └─ 14.413 _execute  django/db/backends/utils.py:78
+                           │  │                 └─ 14.408 [self]  
+                           │  └─ 71.195 add_update_values  django/db/models/sql/subqueries.py:109
+                           │     └─ 71.194 add_update_fields  django/db/models/sql/subqueries.py:131
+                           │        └─ 71.193 resolve_expression  django/db/models/expressions.py:599
+                           │           └─ 71.178 resolve_expression  django/db/models/expressions.py:953
+                           │              └─ 70.554 resolve_expression  django/db/models/expressions.py:889
+                           │                 ├─ 56.066 resolve_expression  django/db/models/query_utils.py:90
+                           │                 │  └─ 54.427 _add_q  django/db/models/sql/query.py:1298
+                           │                 │     ├─ 41.961 build_filter  django/db/models/sql/query.py:1154
+                           │                 │     │  ├─ 17.016 setup_joins  django/db/models/sql/query.py:1457
+                           │                 │     │  │  ├─ 11.041 names_to_path  django/db/models/sql/query.py:1361
+                           │                 │     │  │  │  └─ 10.893 [self]  
+                           │                 │     │  │  └─ 5.601 [self]  
+                           │                 │     │  ├─ 9.201 build_lookup  django/db/models/sql/query.py:1089
+                           │                 │     │  │  ├─ 4.002 __init__  django/db/models/lookups.py:18
+                           │                 │     │  │  │  └─ 3.046 get_prep_lookup  django/db/models/lookups.py:66
+                           │                 │     │  │  │     └─ 2.225 get_prep_value  django/db/models/fields/__init__.py:967
+                           │                 │     │  │  └─ 2.956 get_lookup  django/db/models/expressions.py:317
+                           │                 │     │  │     └─ 2.709 get_lookup  django/db/models/query_utils.py:166
+                           │                 │     │  ├─ 6.246 [self]  
+                           │                 │     │  └─ 3.889 solve_lookup_type  django/db/models/sql/query.py:1040
+                           │                 │     │     └─ 2.189 names_to_path  django/db/models/sql/query.py:1361
+                           │                 │     │        └─ 1.986 [self]  
+                           │                 │     ├─ 3.164 [self]  
+                           │                 │     ├─ 2.974 update_join_types  django/db/models/sql/query.py:2206
+                           │                 │     ├─ 2.636 __init__  django/db/models/sql/query.py:2184
+                           │                 │     │  └─ 1.875 __init__  collections/__init__.py:550
+                           │                 │     └─ 2.486 add_votes  django/db/models/sql/query.py:2199
+                           │                 │        └─ 2.100 update  collections/__init__.py:619
+                           │                 ├─ 8.247 resolve_expression  django/db/models/expressions.py:669
+                           │                 │  └─ 7.473 resolve_expression  django/db/models/expressions.py:223
+                           │                 │     └─ 6.221 copy  django/db/models/expressions.py:331
+                           │                 │        └─ 5.808 copy  copy.py:66
+                           │                 │           ├─ 3.023 [self]  
+                           │                 │           └─ 2.185 _reconstruct  copy.py:268
+                           │                 └─ 4.946 copy  django/db/models/expressions.py:331
+                           │                    └─ 4.627 copy  copy.py:66
+                           │                       ├─ 2.383 [self]  
+                           │                       └─ 1.706 _reconstruct  copy.py:268
+                           ├─ 9.040 __init__  django/db/models/expressions.py:862
+                           │  ├─ 4.989 __init__  django/db/models/query_utils.py:58
+                           │  │  └─ 4.526 [self]  
+                           │  └─ 2.207 [self]  
+                           ├─ 4.159 [self]  
+                           ├─ 3.395 __new__  django/utils/deconstruct.py:14
+                           └─ 2.405 __init__  django/db/models/expressions.py:636
+                              └─ 2.286 [self]  
+

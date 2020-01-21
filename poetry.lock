@@ -216,6 +216,25 @@ version = "2.5.2"
 
 [[package]]
 category = "main"
+description = "Call stack profiler for Python. Shows you why your code is slow!"
+name = "pyinstrument"
+optional = false
+python-versions = "*"
+version = "3.1.0"
+
+[package.dependencies]
+pyinstrument-cext = ">=0.2.2"
+
+[[package]]
+category = "main"
+description = "A CPython extension supporting pyinstrument"
+name = "pyinstrument-cext"
+optional = false
+python-versions = "*"
+version = "0.2.2"
+
+[[package]]
+category = "main"
 description = "Extensions to the standard Python datetime module"
 name = "python-dateutil"
 optional = false
@@ -282,7 +301,7 @@ python-versions = "*"
 version = "0.1.8"
 
 [metadata]
-content-hash = "66c063741c0d9a7309f80e98aa45afe2ce4cf4370f5657644c259312fbf46195"
+content-hash = "beb20b2538ecf430bc0738a5fbd418e3182e802fcf0b267f75bd721e69fde9fb"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -391,6 +410,40 @@ ptyprocess = [
 pygments = [
     {file = "Pygments-2.5.2-py2.py3-none-any.whl", hash = "sha256:2a3fe295e54a20164a9df49c75fa58526d3be48e14aceba6d6b1e8ac0bfd6f1b"},
     {file = "Pygments-2.5.2.tar.gz", hash = "sha256:98c8aa5a9f778fcd1026a17361ddaf7330d1b7c62ae97c3bb0ae73e0b9b6b0fe"},
+]
+pyinstrument = [
+    {file = "pyinstrument-3.1.0-py2.py3-none-any.whl", hash = "sha256:1f8a11be6e61df23b09ea411b98eb888336d6468c172b81c5d42d47a48cddef6"},
+    {file = "pyinstrument-3.1.0.tar.gz", hash = "sha256:10c1fed4996a72c3e1e2bac1940334756894dbd116df3cc3b2d9743f2ae43016"},
+]
+pyinstrument-cext = [
+    {file = "pyinstrument_cext-0.2.2-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:682683207d2100b54b3a649de4ab35264ab7a67607e1733732d8c6762bc79ee6"},
+    {file = "pyinstrument_cext-0.2.2-cp27-cp27m-manylinux1_i686.whl", hash = "sha256:a1899c13683de603480595df06b6b0101bbce128aa294c68c2b4165f586f5016"},
+    {file = "pyinstrument_cext-0.2.2-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:e66e17856c4e916a2f503d39529947bce9c16cab983fed549225fe84202aa96a"},
+    {file = "pyinstrument_cext-0.2.2-cp27-cp27m-win32.whl", hash = "sha256:b711fdad86e82f0ffee4347f6854524ff8df0f96f0ac73fcee38cfb4fe58826e"},
+    {file = "pyinstrument_cext-0.2.2-cp27-cp27m-win_amd64.whl", hash = "sha256:42f19056aed6c06aff5491f8de840ac89cd7dbcf1b46e820b00d1319e50ef5ea"},
+    {file = "pyinstrument_cext-0.2.2-cp27-cp27mu-manylinux1_i686.whl", hash = "sha256:aaacc34a0c2f05be503d12455eef7c1e43381db83552e47d07f8ba44ec29b17d"},
+    {file = "pyinstrument_cext-0.2.2-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:49d0b9f981ebf20abdcac73d23a3871dda445e7da15d318982d081aaed885788"},
+    {file = "pyinstrument_cext-0.2.2-cp34-cp34m-macosx_10_6_intel.whl", hash = "sha256:5ff19426b066b64370bb4dfbe6b6eb558e792fd2893581905470d4e5be6459bc"},
+    {file = "pyinstrument_cext-0.2.2-cp34-cp34m-manylinux1_i686.whl", hash = "sha256:b087e63b2419fa6e130781bcdf6a16aae8e9620cac3860f65cec71a2ccb057f8"},
+    {file = "pyinstrument_cext-0.2.2-cp34-cp34m-manylinux1_x86_64.whl", hash = "sha256:e9e0af9d122a43e4e9cf6cd44042aa434230f6ea6c5122ee0e812aa6d648b57c"},
+    {file = "pyinstrument_cext-0.2.2-cp34-cp34m-win32.whl", hash = "sha256:8f52067a9bf9e04227469a64cc2ed9209a814369f85c3b6b87b99d2bc51d2275"},
+    {file = "pyinstrument_cext-0.2.2-cp34-cp34m-win_amd64.whl", hash = "sha256:9c09af4b376d699337cdd8733d00b9720f4529ceea4a2e9b41aab65f56af9840"},
+    {file = "pyinstrument_cext-0.2.2-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:faa497b3800736f398ae415f2c161c646fe8fbfbc922ce16bdd30d8727cdc19d"},
+    {file = "pyinstrument_cext-0.2.2-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:2346e5f2424d227be82ca5d5fb3c306cf44131b0fec0413bd182d4ef83553f2e"},
+    {file = "pyinstrument_cext-0.2.2-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:38ac36f73e8a767ed86ac8d66f834cf34f4bb2e0cc2ada9a51ae4852e5721cd4"},
+    {file = "pyinstrument_cext-0.2.2-cp35-cp35m-win32.whl", hash = "sha256:4cd18fb31bba6ce6a04600ddccb487f26451bc6a4158f81479953be453c10ef8"},
+    {file = "pyinstrument_cext-0.2.2-cp35-cp35m-win_amd64.whl", hash = "sha256:6b1efbd16e208cc603b9a4382de08890245ebb871f59bb359923ad3100759304"},
+    {file = "pyinstrument_cext-0.2.2-cp36-cp36m-macosx_10_6_intel.whl", hash = "sha256:aabb743d3718e01249ff64ebae126defb23476f5921d18dff99fd2b065110e55"},
+    {file = "pyinstrument_cext-0.2.2-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:750e2ab431bbb4196ba9786a85497d95cb14d1927514ce72e12ff9c3699a9318"},
+    {file = "pyinstrument_cext-0.2.2-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:1fd53cc3213a2c89626c359e5788500217e91c75d01dd2e178a0e53aa905f1dd"},
+    {file = "pyinstrument_cext-0.2.2-cp36-cp36m-win32.whl", hash = "sha256:25956082420f9a8c7ae2353921d59575f6acfd1d703d1188c117efd56d9baecf"},
+    {file = "pyinstrument_cext-0.2.2-cp36-cp36m-win_amd64.whl", hash = "sha256:6e673c46f88c63c9588be74b12cf8a21071cedc80292610e160fe751c1a80199"},
+    {file = "pyinstrument_cext-0.2.2-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:731438b4a813992271f181510a293c950bb0d10eec70c787b80951e9b34a1f8f"},
+    {file = "pyinstrument_cext-0.2.2-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:02ad14a4949b16bc51e87a53799014f4d3b01e814d4cc0d29d66018fe76552f0"},
+    {file = "pyinstrument_cext-0.2.2-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:8559799767c297771e7602f4b59b47f62536f0431b799c3df34aea2ee56f9abb"},
+    {file = "pyinstrument_cext-0.2.2-cp37-cp37m-win32.whl", hash = "sha256:ef26fed4b80c409e26115e22382740917a2f3fc421f9eb9e23fa31b23ca57d2d"},
+    {file = "pyinstrument_cext-0.2.2-cp37-cp37m-win_amd64.whl", hash = "sha256:3e2142eceb4e47274b7f1770fe85601094d24146813bbf00f0a37106b080d803"},
+    {file = "pyinstrument_cext-0.2.2.tar.gz", hash = "sha256:f29e25f71d74c0415ca9310e5567fff0f5d29f4240a09a885abf8b0eed71cc5b"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},

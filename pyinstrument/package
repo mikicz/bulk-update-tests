@@ -1,0 +1,36 @@
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 21:30:35  Samples:  11520
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 25.923    CPU time: 12.974
+/   _/                      v3.1.0
+
+Program: manage.py run_test package
+
+25.923 <module>  manage.py:2
+└─ 25.923 main  manage.py:7
+   └─ 25.902 execute_from_command_line  django/core/management/__init__.py:378
+      └─ 25.902 execute  django/core/management/__init__.py:301
+         └─ 25.762 run_from_argv  django/core/management/base.py:306
+            └─ 25.762 execute  django/core/management/base.py:342
+               └─ 25.731 handle  apps/something/management/commands/sample.py:10
+                  └─ 25.708 bulk_update_package  apps/something/test_bulk_update.py:16
+                     ├─ 24.799 bulk_update  bulk_update/helper.py:47
+                     │  ├─ 14.616 execute  django/db/backends/utils.py:96
+                     │  │  └─ 14.612 execute  django/db/backends/utils.py:66
+                     │  │     └─ 14.612 _execute_with_wrappers  django/db/backends/utils.py:72
+                     │  │        └─ 14.611 _execute  django/db/backends/utils.py:78
+                     │  │           └─ 14.608 [self]  
+                     │  ├─ 8.131 [self]  
+                     │  ├─ 0.580 get_db_prep_value  django/db/models/fields/__init__.py:781
+                     │  │  └─ 0.260 get_prep_value  django/db/models/fields/__init__.py:1020
+                     │  ├─ 0.453 get_db_prep_value  django/db/models/fields/related.py:939
+                     │  ├─ 0.366 get_db_prep_value  django/db/models/fields/__init__.py:1432
+                     │  │  └─ 0.312 get_prep_value  django/db/models/fields/__init__.py:1413
+                     │  ├─ 0.325 get_db_prep_value  django/db/models/fields/__init__.py:1276
+                     │  └─ 0.266 get_db_prep_value  django/db/models/fields/__init__.py:961
+                     └─ 0.907 __iter__  django/db/models/query.py:259
+                        └─ 0.907 _fetch_all  django/db/models/query.py:1240
+                           └─ 0.900 __iter__  django/db/models/query.py:49
+                              └─ 0.630 from_db  django/db/models/base.py:505
+                                 └─ 0.548 __init__  django/db/models/base.py:401
+                                    └─ 0.531 [self]  
+
