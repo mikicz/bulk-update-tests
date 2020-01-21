@@ -10,6 +10,9 @@ python = "^3.7"
 Django = "~=2.2.9"
 django-bulk-update = "^2.2.0"
 psycopg2-binary = "^2.8.4"
+factory_boy = "^2.12.0"
+ipython = "^7.11.1"
+django-extensions = "^2.2.6"
 
 [tool.poetry.dev-dependencies]
 

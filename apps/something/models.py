@@ -3,7 +3,7 @@ from django.db import models
 
 class SomethingElse(models.Model):
 
-    a = models.CharField(max_length=255)
+    char1 = models.CharField(max_length=255)
 
 
 class Something(models.Model):
