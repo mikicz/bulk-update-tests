@@ -1,28 +1,60 @@
+import itertools
+
 from bulk_update.helper import bulk_update
 
 from apps.something.models import Something
 
+db_fields = {
+    "relation1": "relationship",
+    "date1": "date",
+    "date2": "date",
+    "bool1": "bool",
+    "bool2": "bool",
+    "bool3": "bool",
+    "int1": "int",
+    "int2": "int",
+    "int3": "int",
+    "datetime1": "datetime",
+}
 
-def inbuilt(fields=10, objects=100_000, batch_size=1000):
+
+def get_all_combos():
+    types = list(set(db_fields.values()))
+    for x in itertools.chain(
+        itertools.combinations(types, 1),
+        itertools.combinations(types, 2),
+        itertools.combinations(types, 3),
+        itertools.combinations(types, 4),
+        itertools.combinations(types, 5),
+    ):
+        yield set(x)
+
+
+def get_fields(types):
+    if not types:
+        return list(db_fields.keys())
+
+    return [k for k, v in db_fields.items() if v in types]
+
+
+def inbuilt(types=None, objects=100_000, batch_size=1000):
     list_of_objects = list(Something.objects.all()[:objects])
 
-    Something.objects.bulk_update(
-        list_of_objects,
-        ["relation1", "date1", "date2", "bool1", "bool2", "bool3", "int1", "int2", "int3", "datetime1"][:fields],
-        batch_size=batch_size,
-    )
+    fields = get_fields(types)
+
+    Something.objects.bulk_update(list_of_objects, fields, batch_size=batch_size)
+
+    return len(fields)
 
 
-def bulk_update_package(fields=10, objects=100_000, batch_size=1000):
+def bulk_update_package(types=None, objects=100_000, batch_size=1000):
     list_of_objects = list(Something.objects.all()[:objects])
 
-    bulk_update(
-        list_of_objects,
-        update_fields=["relation1", "date1", "date2", "bool1", "bool2", "bool3", "int1", "int2", "int3", "datetime1"][
-            :fields
-        ],
-        batch_size=batch_size,
-    )
+    fields = get_fields(types)
+
+    bulk_update(list_of_objects, update_fields=fields, batch_size=batch_size)
+
+    return len(fields)
 
 
 """
