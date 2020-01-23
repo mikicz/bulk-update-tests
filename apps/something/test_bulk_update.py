@@ -37,20 +37,26 @@ def get_fields(types):
     return [k for k, v in db_fields.items() if v in types]
 
 
-def inbuilt(types=None, objects=100_000, batch_size=1000):
+def inbuilt(types=None, single=False, objects=100_000, batch_size=1000):
     list_of_objects = list(Something.objects.all()[:objects])
 
     fields = get_fields(types)
+
+    if len(types) == 1 and single:
+        fields = fields[:1]
 
     Something.objects.bulk_update(list_of_objects, fields, batch_size=batch_size)
 
     return len(fields)
 
 
-def bulk_update_package(types=None, objects=100_000, batch_size=1000):
+def bulk_update_package(types=None, single=False, objects=100_000, batch_size=1000):
     list_of_objects = list(Something.objects.all()[:objects])
 
     fields = get_fields(types)
+
+    if len(types) == 1 and single:
+        fields = fields[:1]
 
     bulk_update(list_of_objects, update_fields=fields, batch_size=batch_size)
 
